@@ -1,3 +1,5 @@
+//this program prints mario stairs
+
 #include <stdio.h>
 #include <cs50.h>
 
@@ -5,17 +7,24 @@
 int main(void)
 {
     int n;
+    //prompt user with input
     do{
-        n = get_int();
+        n = get_int("Enter an number(0-23): ");
     }
-    while(n < 0 && n>23);
+    while(n < 0 || n>23);
     
-    for(int i = 0; i < n; i++)
+    //iterate to print the hash and spaces
+    for(int i = 1; i <= n; i++)
     {
-        for(int j = 0; j < n; j++)
+        for(int j = i; j < n; j++)
+        {
+            printf(" ");    
+        }
+        for(int k = n-i; k <= n; k++)
         {
             printf("#");    
         }
+        
         printf("\n");
     }
     
